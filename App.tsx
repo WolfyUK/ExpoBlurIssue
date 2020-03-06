@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, Image, StyleSheet, Text, View } from "react-native";
 import Modal from "./Modal";
 
 export default class App extends React.Component<{}, {
@@ -24,6 +24,9 @@ export default class App extends React.Component<{}, {
                     <Text>
                         I should be blurred on iOS...
                     </Text>
+                </View>
+                <View style={styles.view}>
+                    <Image style={{ width: 100, height: 100 }} source={{ uri: "https://s3.amazonaws.com/exp-icon-assets/ExpoEmptyManifest_192.png" }} />
                 </View>
                 <View style={styles.view}>
                     <View style={styles.view}>

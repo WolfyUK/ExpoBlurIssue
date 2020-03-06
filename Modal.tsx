@@ -11,7 +11,6 @@ export interface ModalProps {
     onClosed: () => void;
 }
 
-
 const Modal = (props: ModalProps): JSX.Element => {
     return (
         <ReactNativeModal
