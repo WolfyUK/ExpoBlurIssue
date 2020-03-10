@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import Modal from "./Modal";
+import { BlurView } from "expo-blur";
 
 export default class App extends React.Component<{}, {
     modalOpen: boolean,
@@ -25,8 +26,9 @@ export default class App extends React.Component<{}, {
                         I should be blurred on iOS...
                     </Text>
                 </View>
-                <View style={styles.view}>
+                <View style={styles.container}>
                     <Image style={{ width: 100, height: 100 }} source={{ uri: "https://s3.amazonaws.com/exp-icon-assets/ExpoEmptyManifest_192.png" }} />
+                    <BlurView tint="light" intensity={50} style={styles.fill}></BlurView>
                 </View>
                 <View style={styles.view}>
                     <View style={styles.view}>
@@ -89,5 +91,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffe",
         alignItems: "center",
         justifyContent: "center",
+    },
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    fill: {
+        ...(StyleSheet.absoluteFill as any),
     },
 });
